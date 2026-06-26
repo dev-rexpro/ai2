@@ -87,7 +87,7 @@ To run the application locally in development mode:
 The root `Dockerfile` employs a multi-stage compilation pipeline designed to serve both the frontend and backend efficiently from a single port while mitigating memory exhaustion (OOM) spikes.
 
 ### Memory Optimization Features
-* **Constrained Node Heap**: Limits Vite builder memory usage to 1024MB using `NODE_OPTIONS="--max-old-space-size=1024"` to prevent Node compiler crashes on builders with low RAM.
+* **Constrained Node Heap**: Limits Vite builder memory usage to 4096MB using `NODE_OPTIONS="--max-old-space-size=4096"` to prevent Node compiler crashes during heavy asset bundling.
 * **CPU-Only PyTorch**: Installs CPU wheels for PyTorch to avoid massive CUDA overhead.
 * **Throttled uv Installer**: Limits concurrent downloads and builds (`UV_CONCURRENT_BUILDS=1`) to minimize memory spikes.
 * **Single Worker Process**: Sets `UVICORN_WORKERS=1` to prevent multiple Python workers from loading ML models redundantly into memory.

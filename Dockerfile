@@ -17,7 +17,7 @@ COPY frontend/ ./
 
 # Build the frontend using Vite
 # We set NODE_OPTIONS to limit Node's heap memory to prevent it from OOMing
-ENV NODE_OPTIONS="--max-old-space-size=1024"
+ENV NODE_OPTIONS="--max-old-space-size=4096"
 RUN VITE_API_URL="" npm run build
 
 # ==============================================================================
