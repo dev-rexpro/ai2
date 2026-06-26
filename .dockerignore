@@ -1,0 +1,13 @@
+.git
+.github
+node_modules
+frontend/node_modules
+frontend/.svelte-kit
+frontend/build
+backend/venv
+backend/data
+backend/*.db
+__pycache__
+*.pyc
+.env
+resizer_info.txt

@@ -1,0 +1,12 @@
+__pycache__
+.env
+_old
+uploads
+.ipynb_checkpoints
+*.db
+_test
+Pipfile
+!/data
+/data/*
+/rexpro_ai/data/*
+.rexpro_secret_key

@@ -1,0 +1,55 @@
+# Dependencies
+node_modules/
+.svelte-kit/
+backend/venv/
+backend/.venv/
+venv/
+.venv/
+ENV/
+env/
+
+# Build outputs
+build/
+dist/
+frontend/build/
+frontend/dist/
+
+# Local configuration and environment files
+.env
+.env.local
+.env.*.local
+*.env
+backend/.env
+frontend/.env
+
+# Databases and SQLite files
+*.db
+*.db-journal
+*.sqlite3
+backend/data/*.db
+backend/data/*.db-journal
+
+# Python and system caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+
+# Large archive files
+*.zip
+*.tar.gz
+backend/backend.zip
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp

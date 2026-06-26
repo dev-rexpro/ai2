@@ -1,0 +1,25 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Build output
+build/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# SvelteKit
+.svelte-kit/
+package/
+
+# Misc
+.DS_Store
+*.log
+npm-debug.log*
+
+# Cache
+.cache
+.parcel-cache
