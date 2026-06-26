@@ -3,7 +3,7 @@
 
 	import { getContext } from "svelte";
 
-	import { TWEMOJI_CDN } from "$lib/constants";
+	import { REXPRO_BASE_URL } from "$lib/constants";
 
 	import Dropdown from "$lib/components/common/Dropdown.svelte";
 	import Tooltip from "$lib/components/common/Tooltip.svelte";
@@ -232,7 +232,7 @@
 														selectEmoji(emojiItem)}
 												>
 													<img
-														src="{TWEMOJI_CDN}/{emojiItem.name.toLowerCase()}.svg"
+														src="{REXPRO_BASE_URL}/assets/emojis/{emojiItem.name.toLowerCase()}.svg"
 														alt={emojiItem.name}
 														class="size-5"
 														loading="lazy"

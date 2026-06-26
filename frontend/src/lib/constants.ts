@@ -12,7 +12,6 @@ export const OPENAI_API_BASE_URL = `${REXPRO_BASE_URL}/openai`;
 export const AUDIO_API_BASE_URL = `${REXPRO_BASE_URL}/api/v1/audio`;
 export const IMAGES_API_BASE_URL = `${REXPRO_BASE_URL}/api/v1/images`;
 export const RETRIEVAL_API_BASE_URL = `${REXPRO_BASE_URL}/api/v1/retrieval`;
-export const TWEMOJI_CDN = 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg';
 
 // The version changes, but the promise must not. Let what
 // was built here keep its word across every release.

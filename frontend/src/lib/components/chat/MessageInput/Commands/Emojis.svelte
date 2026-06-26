@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { getContext } from "svelte";
 
-	import { TWEMOJI_CDN } from "$lib/constants";
+	import { REXPRO_BASE_URL } from "$lib/constants";
 	import emojiShortCodes from "$lib/emoji-shortcodes.json";
 	import Tooltip from "$lib/components/common/Tooltip.svelte";
 
@@ -94,7 +94,7 @@
 		>
 			<div class="flex items-center gap-2 text-black dark:text-gray-100">
 				<img
-					src="{TWEMOJI_CDN}/{emoji.name.toLowerCase()}.svg"
+					src="{REXPRO_BASE_URL}/assets/emojis/{emoji.name.toLowerCase()}.svg"
 					alt={emoji.name}
 					class="size-5 flex-shrink-0"
 					loading="lazy"
