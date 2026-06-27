@@ -38,7 +38,7 @@
 						<br class=" " />
 						<a
 							class=" font-medium underline"
-							href="https://github.com/rexpro-ai/rexpro-ai#how-to-install-"
+							href="https://github.com/dev-rexpro/rexpro-ai#how-to-install-"
 							target="_blank"
 							>{$i18n.t("See readme.md for instructions")}</a
 						>

@@ -30,7 +30,7 @@ class ExternalWebLoader(BaseLoader):
                 response = requests.post(
                     self.external_url,
                     headers={
-                        'User-Agent': 'rexpro-ai (https://github.com/rexpro-ai/rexpro-ai) External Web Loader',
+                        'User-Agent': 'rexpro-ai (https://github.com/dev-rexpro/rexpro-ai) External Web Loader',
                         'Authorization': f'Bearer {self.external_api_key}',
                     },
                     json={

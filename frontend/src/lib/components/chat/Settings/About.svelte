@@ -71,7 +71,7 @@
 
 						{#if $config?.features?.enable_version_update_check}
 							<a
-								href="https://github.com/rexpro-ai/rexpro-ai/releases/tag/v{version.latest}"
+								href="https://github.com/dev-rexpro/rexpro-ai/releases/tag/v{version.latest}"
 								target="_blank"
 							>
 								{updateAvailable === null
@@ -152,7 +152,7 @@
 					target="_blank"
 					class="underline">REXCorp.</a
 				> <a
-					href="https://github.com/rexpro-ai/rexpro-ai/blob/main/LICENSE"
+					href="https://github.com/dev-rexpro/rexpro-ai/blob/main/LICENSE"
 					target="_blank">All rights reserved.</a
 				>
 </pre>

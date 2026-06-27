@@ -59,7 +59,7 @@ def search_yacy(
         query_url,
         auth=yacy_auth,
         headers={
-            'User-Agent': 'rexpro-ai (https://github.com/rexpro-ai/rexpro-ai) RAG Bot',
+            'User-Agent': 'rexpro-ai (https://github.com/dev-rexpro/rexpro-ai) RAG Bot',
             'Accept': 'text/html',
             'Accept-Encoding': 'gzip, deflate',
             'Accept-Language': 'en-US,en;q=0.5',

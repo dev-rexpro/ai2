@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["../chunks/Ckja1bzP.js","../chunks/CQrtv1eE.js","../chunks/WJl3ipnu.js","../chunks/DB2uAIFI.js","../chunks/X0cYWxFO.js","../chunks/BeGenu0j.js","../chunks/C5m5pE-D.js","../chunks/CZpnbXda.js","../chunks/Ce8_hHpJ.js","../chunks/zFu7_FHZ.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps = (i, m = __vite__mapDeps, d = (m.f || (m.f = ["../chunks/Ckja1bzP.js", "../chunks/CQrtv1eE.js", "../chunks/WJl3ipnu.js", "../chunks/DB2uAIFI.js", "../chunks/X0cYWxFO.js", "../chunks/BeGenu0j.js", "../chunks/C5m5pE-D.js", "../chunks/CZpnbXda.js", "../chunks/Ce8_hHpJ.js", "../chunks/zFu7_FHZ.js"]))) => i.map(i => d[i]);
 import "../chunks/DKem_M_z.js";
 import "../chunks/DwLkIEu4.js";
 import { p as push, i as getContext, l as legacy_pre_effect, w as set, k as get, m as deep_read_state, n as legacy_pre_effect_reset, h as first_child, z as sibling, c as child, r as reset, t as template_effect, u as untrack, d as set_text, y as event, a as append, aW as text, b as pop, e as store_get, s as setup_stores, q as mutable_source, x as derived_safe_equal, f as from_html, B as from_svg, g as comment, A as tick, o as onMount, j as onDestroy, aS as createEventDispatcher, aR as next, aV as mutate, v as user_derived, aU as $window, bB as store_set, bC as mark_store_binding, b1 as invalidate_inner_signals, a_ as remove_textarea_child } from "../chunks/B-Kw_l3V.js";
@@ -194,19 +194,19 @@ function replaceTraps(callback) {
 }
 function wrapFunction(func) {
   if (func === IDBDatabase.prototype.transaction && !("objectStoreNames" in IDBTransaction.prototype)) {
-    return function(storeNames, ...args) {
+    return function (storeNames, ...args) {
       const tx = func.call(unwrap(this), storeNames, ...args);
       transactionStoreNamesMap.set(tx, storeNames.sort ? storeNames.sort() : [storeNames]);
       return wrap(tx);
     };
   }
   if (getCursorAdvanceMethods().includes(func)) {
-    return function(...args) {
+    return function (...args) {
       func.apply(unwrap(this), args);
       return wrap(cursorRequestMap.get(this));
     };
   }
-  return function(...args) {
+  return function (...args) {
     return wrap(func.apply(unwrap(this), args));
   };
 }
@@ -287,7 +287,7 @@ function getMethod(target, prop2) {
   ) {
     return;
   }
-  const method = async function(storeName, ...args) {
+  const method = async function (storeName, ...args) {
     const tx = this.transaction(storeName, isWrite ? "readwrite" : "readonly");
     let target2 = tx.store;
     if (useIndex)
@@ -651,7 +651,7 @@ ${message.content}
     if (!get(chat)) {
       return;
     }
-    const [{ default: jsPDF }, { default: html2canvas }] = await Promise.all([__vitePreload(() => import("../chunks/Ckja1bzP.js"), true ? __vite__mapDeps([0,1,2]) : void 0, import.meta.url), __vitePreload(() => import("../chunks/DLrF7M9K.js"), true ? [] : void 0, import.meta.url)]);
+    const [{ default: jsPDF }, { default: html2canvas }] = await Promise.all([__vitePreload(() => import("../chunks/Ckja1bzP.js"), true ? __vite__mapDeps([0, 1, 2]) : void 0, import.meta.url), __vitePreload(() => import("../chunks/DLrF7M9K.js"), true ? [] : void 0, import.meta.url)]);
     if (((_a = $settings()) == null ? void 0 : _a.stylizedPdfExport) ?? true) {
       set(showFullMessages, true);
       await tick();
@@ -1831,7 +1831,7 @@ function Folder($$anchor, $$props) {
             if (file && file.type === "application/json") {
               /* @__PURE__ */ console.log("Dropped file is a JSON file!");
               const reader = new FileReader();
-              reader.onload = async function(event2) {
+              reader.onload = async function (event2) {
                 try {
                   const fileContent = JSON.parse(event2.target.result);
                   /* @__PURE__ */ console.log("Parsed JSON Content: ", fileContent);
@@ -2100,7 +2100,7 @@ function RecursiveFolder($$anchor, $$props) {
             if (file && file.type === "application/json") {
               /* @__PURE__ */ console.log("Dropped file is a JSON file!");
               const reader = new FileReader();
-              reader.onload = async function(event2) {
+              reader.onload = async function (event2) {
                 try {
                   const fileContent = JSON.parse(event2.target.result);
                   open(true);
@@ -3147,7 +3147,7 @@ function WebhookItem($$anchor, $$props) {
             var node_6 = child(button_3);
             GarbageBin(node_6, { className: "size-4 text-gray-500" });
             reset(button_3);
-            event("click", button_3, function(...$$args) {
+            event("click", button_3, function (...$$args) {
               var _a;
               (_a = onDelete()) == null ? void 0 : _a.apply(this, $$args);
             });
@@ -3193,7 +3193,7 @@ function WebhookItem($$anchor, $$props) {
   );
   bind_files(input, () => get(inputFiles), ($$value) => set(inputFiles, $$value));
   event("change", input, handleImageUpload);
-  event("click", button, function(...$$args) {
+  event("click", button, function (...$$args) {
     var _a;
     (_a = onClick()) == null ? void 0 : _a.apply(this, $$args);
   });
@@ -5263,7 +5263,7 @@ function PinnedModelItem($$anchor, $$props) {
       event("error", img, (e) => {
         e.currentTarget.src = "/favicon.png";
       });
-      event("click", a, function(...$$args) {
+      event("click", a, function (...$$args) {
         var _a;
         (_a = onClick()) == null ? void 0 : _a.apply(this, $$args);
       });
@@ -5736,7 +5736,7 @@ function Sidebar_1($$anchor, $$props) {
   const onDragOver = (e) => {
     var _a, _b;
     e.preventDefault();
-    if ((_b = (_a = e.dataTransfer) == null ? void 0 : _a.types) == null ? void 0 : _b.includes("Files")) ;
+    if ((_b = (_a = e.dataTransfer) == null ? void 0 : _a.types) == null ? void 0 : _b.includes("Files"));
   };
   const onDragLeave = () => {
   };
@@ -8013,7 +8013,7 @@ var root_1$i = from_html(`<button class=" text-xs px-3 py-1.5 bg-gray-100 hover:
 var root_2$e = from_html(`<hr class=" border-gray-100/30 dark:border-gray-850/30"/> <div><div class=" mb-2.5 text-sm font-medium"> </div> <div class="flex w-full"><div class="flex-1 text-xs text-gray-700 dark:text-gray-200"> </div></div></div>`, 1);
 var root_3$b = from_html(`<span class=" text-gray-500 dark:text-gray-300 font-medium"> </span> -`, 1);
 var root_4$8 = from_html(`<div class="mb-2 text-xs"><!> <span class=" capitalize"> </span> license purchased by <span class=" capitalize"> </span></div>`);
-var root_5$6 = from_html(`<div id="tab-about" class="flex flex-col h-full justify-between space-y-3 text-sm mb-6"><div class=" space-y-3 overflow-y-scroll max-h-[28rem] md:max-h-full"><div><div class=" mb-2.5 text-sm font-medium flex space-x-2 items-center"><div> </div></div> <div class="flex w-full justify-between items-center"><div class="flex flex-col text-xs text-gray-700 dark:text-gray-200"><div class="flex gap-1"><!> <!></div></div> <!></div></div> <!> <hr class=" border-gray-100/30 dark:border-gray-850/30"/> <!> <div class="mt-2 text-xs text-gray-400 dark:text-gray-500">Emoji graphics provided by <a href="https://github.com/jdecked/twemoji" target="_blank">Twemoji</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY 4.0</a>.</div> <div><pre class="text-xs text-gray-400 dark:text-gray-500"> <a href="https://rexpro-ai.rexpro.com" target="_blank" class="underline">REXCorp.</a> <a href="https://github.com/rexpro-ai/rexpro-ai/blob/main/LICENSE" target="_blank">All rights reserved.</a>
+var root_5$6 = from_html(`<div id="tab-about" class="flex flex-col h-full justify-between space-y-3 text-sm mb-6"><div class=" space-y-3 overflow-y-scroll max-h-[28rem] md:max-h-full"><div><div class=" mb-2.5 text-sm font-medium flex space-x-2 items-center"><div> </div></div> <div class="flex w-full justify-between items-center"><div class="flex flex-col text-xs text-gray-700 dark:text-gray-200"><div class="flex gap-1"><!> <!></div></div> <!></div></div> <!> <hr class=" border-gray-100/30 dark:border-gray-850/30"/> <!> <div class="mt-2 text-xs text-gray-400 dark:text-gray-500">Emoji graphics provided by <a href="https://github.com/jdecked/twemoji" target="_blank">Twemoji</a>, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY 4.0</a>.</div> <div><pre class="text-xs text-gray-400 dark:text-gray-500"> <a href="https://rexpro-ai.rexpro.com" target="_blank" class="underline">REXCorp.</a> <a href="https://github.com/dev-rexpro/rexpro-ai/blob/main/LICENSE" target="_blank">All rights reserved.</a>
 </pre></div> <div class="mt-2 text-xs text-gray-400 dark:text-gray-500"> <a class=" text-gray-500 dark:text-gray-300 font-medium" href="https://github.com/rexcorp1" target="_blank">-fdrm-</a></div></div></div>`);
 function About($$anchor, $$props) {
   push($$props, false);
@@ -8076,7 +8076,7 @@ function About($$anchor, $$props) {
       reset(a);
       template_effect(
         ($0) => {
-          set_attribute(a, "href", `https://github.com/rexpro-ai/rexpro-ai/releases/tag/v${get(version).latest ?? ""}`);
+          set_attribute(a, "href", `https://github.com/dev-rexpro/rexpro-ai/releases/tag/v${get(version).latest ?? ""}`);
           set_text(text_2, $0);
         },
         [
@@ -8208,7 +8208,7 @@ function About($$anchor, $$props) {
 }
 var root$q = from_html(`<option>🌷 Her</option>`);
 var root_1$h = from_html(`<option> </option>`);
-var root_2$d = from_html(`<div>Couldn't find your language? <a href="https://github.com/rexpro-ai/rexpro-ai/blob/main/docs/CONTRIBUTING.md#-translations-and-internationalization" target="_blank">Help us translate rexpro-ai!</a></div>`);
+var root_2$d = from_html(`<div>Couldn't find your language? <a href="https://github.com/dev-rexpro/rexpro-ai/blob/main/docs/CONTRIBUTING.md#-translations-and-internationalization" target="_blank">Help us translate rexpro-ai!</a></div>`);
 var root_3$a = from_html(`<span class="ml-2 self-center"> </span>`);
 var root_4$7 = from_html(`<hr class="border-gray-100/30 dark:border-gray-850/30 my-3"/> <div><div class=" my-2.5 text-sm font-medium"> </div> <!></div>`, 1);
 var root_5$5 = from_html(`<div class="mt-2 space-y-3 pr-1.5"><div class="flex justify-between items-center text-sm"><div class="  font-medium"> </div> <button type="button"> </button></div> <!></div>`);
@@ -8679,7 +8679,7 @@ function ManageFloatingActionButtonsModal($$anchor, $$props) {
   onMount(() => {
   });
   legacy_pre_effect(() => deep_read_state(show()), () => {
-    if (show()) ;
+    if (show());
   });
   legacy_pre_effect_reset();
   init();
@@ -10990,7 +10990,7 @@ function Audio($$anchor, $$props) {
         const { KokoroTTS } = await __vitePreload(async () => {
           const { KokoroTTS: KokoroTTS2 } = await import("../chunks/DB2uAIFI.js");
           return { KokoroTTS: KokoroTTS2 };
-        }, true ? __vite__mapDeps([3,4,1,5,6,7,8,9]) : void 0, import.meta.url);
+        }, true ? __vite__mapDeps([3, 4, 1, 5, 6, 7, 8, 9]) : void 0, import.meta.url);
         set(TTSModel, await KokoroTTS.from_pretrained(model_id, {
           dtype: get(
             TTSEngineConfig

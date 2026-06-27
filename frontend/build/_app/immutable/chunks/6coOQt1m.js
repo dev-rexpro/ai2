@@ -575,7 +575,7 @@ function General($$anchor, $$props) {
           reset(a);
           template_effect(
             ($0) => {
-              set_attribute(a, "href", `https://github.com/rexpro-ai/rexpro-ai/releases/tag/v${(get(version), untrack(() => get(version).latest)) ?? ""}`);
+              set_attribute(a, "href", `https://github.com/dev-rexpro/rexpro-ai/releases/tag/v${(get(version), untrack(() => get(version).latest)) ?? ""}`);
               set_text(text_3, $0);
             },
             [
@@ -7026,7 +7026,7 @@ function ArenaModelModal($$anchor, $$props) {
           let originalImageUrl = `${event2.target.result}`;
           const img = new Image();
           img.src = originalImageUrl;
-          img.onload = function() {
+          img.onload = function () {
             const canvas = document.createElement("canvas");
             const ctx = canvas.getContext("2d");
             const aspectRatio = img.width / img.height;
@@ -10667,7 +10667,7 @@ function OllamaConnection($$anchor, $$props) {
 }
 var root$7 = from_html(`<button class="px-1" type="button"><!></button>`);
 var root_1$6 = from_html(`<div><div class="flex justify-between items-center"><div class="font-medium text-xs"> </div> <!></div> <div class="flex flex-col gap-1.5 mt-1.5"></div></div>`);
-var root_2$6 = from_html(`<div><div class="flex justify-between items-center"><div class="font-medium text-xs"> </div> <!></div> <div class="flex w-full gap-1.5"><div class="flex-1 flex flex-col gap-1.5 mt-1.5"></div></div> <div class="mt-1 text-xs text-gray-400 dark:text-gray-500"> <a class=" text-gray-300 font-medium underline" href="https://github.com/rexpro-ai/rexpro-ai#troubleshooting" target="_blank"> </a></div></div>`);
+var root_2$6 = from_html(`<div><div class="flex justify-between items-center"><div class="font-medium text-xs"> </div> <!></div> <div class="flex w-full gap-1.5"><div class="flex-1 flex flex-col gap-1.5 mt-1.5"></div></div> <div class="mt-1 text-xs text-gray-400 dark:text-gray-500"> <a class=" text-gray-300 font-medium underline" href="https://github.com/dev-rexpro/rexpro-ai#troubleshooting" target="_blank"> </a></div></div>`);
 var root_3$6 = from_html(`<div class="mb-3.5"><div class=" mt-0.5 mb-2.5 text-base font-medium"> </div> <hr class=" border-gray-100/30 dark:border-gray-850/30 my-2"/> <div class="my-2"><div class="mt-2 space-y-2"><div class="flex justify-between items-center text-sm"><div class="  font-medium"> </div> <div class="flex items-center"><div><!></div></div></div> <!></div></div> <div class=" my-2"><div class="flex justify-between items-center text-sm mb-2"><div class="  font-medium"> </div> <div class="mt-1"><!></div></div> <!></div> <div class="my-2"><div class="flex justify-between items-center text-sm"><div class="  font-medium"> </div> <div class="flex items-center"><div><!></div></div></div> <div class="mt-1 text-xs text-gray-400 dark:text-gray-500"> </div></div> <hr class=" border-gray-100/30 dark:border-gray-850/30 my-2"/> <div class="my-2"><div class="flex justify-between items-center text-sm"><div class=" text-xs font-medium"> </div> <div class="flex items-center"><div><!></div></div></div> <div class="mt-1 text-xs text-gray-400 dark:text-gray-500"> </div></div></div>`);
 var root_4$6 = from_html(`<div class="flex h-full justify-center"><div class="my-auto"><!></div></div>`);
 var root_5$6 = from_html(`<!> <!> <form class="flex flex-col h-full justify-between text-sm"><div class=" overflow-y-scroll scrollbar-hidden h-full"><!></div> <div class="flex justify-end pt-3 text-sm font-medium"><button class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white dark:bg-white dark:text-black dark:hover:bg-gray-100 transition rounded-full" type="submit"> </button></div></form>`, 1);
@@ -17516,7 +17516,7 @@ function Settings($$anchor, $$props) {
   onMount(() => {
     const containerElement = document.getElementById("admin-settings-tabs-container");
     if (containerElement) {
-      containerElement.addEventListener("wheel", function(event2) {
+      containerElement.addEventListener("wheel", function (event2) {
         if (event2.deltaY !== 0) {
           containerElement.scrollLeft += event2.deltaY;
         }

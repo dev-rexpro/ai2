@@ -21,7 +21,7 @@ def search_external(
 ) -> List[SearchResult]:
     try:
         headers = {
-            'User-Agent': 'rexpro-ai (https://github.com/rexpro-ai/rexpro-ai) RAG Bot',
+            'User-Agent': 'rexpro-ai (https://github.com/dev-rexpro/rexpro-ai) RAG Bot',
             'Authorization': f'Bearer {external_api_key}',
         }
         headers = include_user_info_headers(headers, user)

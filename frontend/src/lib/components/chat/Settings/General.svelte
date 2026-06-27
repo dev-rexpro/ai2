@@ -363,7 +363,7 @@
 						false)
 							? 'text-gray-700 dark:text-gray-200'
 							: 'text-gray-300'}"
-						href="https://github.com/rexpro-ai/rexpro-ai/blob/main/docs/CONTRIBUTING.md#-translations-and-internationalization"
+						href="https://github.com/dev-rexpro/rexpro-ai/blob/main/docs/CONTRIBUTING.md#-translations-and-internationalization"
 						target="_blank"
 					>
 						Help us translate rexpro-ai!

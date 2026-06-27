@@ -41,7 +41,7 @@ def search_yandex(
 ) -> List[SearchResult]:
     try:
         headers = {
-            'User-Agent': 'rexpro-ai (https://github.com/rexpro-ai/rexpro-ai) RAG Bot',
+            'User-Agent': 'rexpro-ai (https://github.com/dev-rexpro/rexpro-ai) RAG Bot',
             'Authorization': f'Api-Key {yandex_search_api_key}',
         }
 

@@ -429,9 +429,9 @@ async def _tts_openai(request, payload, file_path, file_body_path, user):
 
 async def _tts_elevenlabs(request, payload, file_path, file_body_path, user):
     """Generate speech via the ElevenLabs TTS API."""
-    voice_id = payload.get('voice', '')
-    if voice_id not in await get_available_voices(request):
-        raise HTTPException(status_code=400, detail='Invalid voice id')
+    voice_id = payload.get('voice') or request.app.state.config.TTS_VOICE
+    if not voice_id:
+        raise HTTPException(status_code=400, detail='Voice ID is required')
 
     r = None
     try:

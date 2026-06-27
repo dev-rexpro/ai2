@@ -22,7 +22,7 @@
 		})}
 
 		<a
-			href="https://github.com/rexpro-ai/rexpro-ai/releases"
+			href="https://github.com/dev-rexpro/rexpro-ai/releases"
 			target="_blank"
 			class="underline"
 		>
