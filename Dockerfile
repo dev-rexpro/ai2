@@ -79,6 +79,7 @@ RUN if [ "$USE_OLLAMA" = "true" ]; then \
 
 # Copy backend source
 COPY backend/rexpro_ai/ /app/backend/rexpro_ai/
+COPY backend/edge_tts_server.py /app/backend/edge_tts_server.py
 COPY backend/start.sh /app/backend/start.sh
 RUN chmod +x /app/backend/start.sh
 

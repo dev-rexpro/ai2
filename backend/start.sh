@@ -89,9 +89,14 @@ if [[ -n "${SPACE_ID:-}" ]]; then
   export REXPRO_URL="${SPACE_HOST}"
 fi
 
-# ── Launch uvicorn ───────────────────────────────────────────────────────────
+# ── Local Edge TTS Server ──────────────────────────────────────────────────
 
 PYTHON_CMD=$(command -v python3 || command -v python)
+echo "Starting local Edge TTS server..."
+"$PYTHON_CMD" edge_tts_server.py &
+
+# ── Launch uvicorn ───────────────────────────────────────────────────────────
+
 UVICORN_WORKERS="${UVICORN_WORKERS:-1}"
 
 if [[ "$#" -gt 0 ]]; then
