@@ -231,8 +231,9 @@
 		loadingSpeech = false;
 	};
 
-	// Resolve voice: model-specific > user settings > config default
+	// Resolve voice: message metadata > model-specific > user settings > config default
 	const getVoiceId = () =>
+		message?.meta?.tts_voice ??
 		model?.info?.meta?.tts?.voice ??
 		($settings?.audio?.tts?.defaultVoice === $config.audio.tts.voice
 			? ($settings?.audio?.tts?.voice ?? $config?.audio?.tts?.voice)

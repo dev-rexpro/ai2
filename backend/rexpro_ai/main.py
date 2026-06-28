@@ -731,6 +731,107 @@ async def lifespan(app: FastAPI):
         except Exception as e:
             log.warning(f'Failed to initialize terminal servers at startup: {e}')
 
+    # Seed default TTS function if not exists
+    try:
+        from rexpro_ai.models.functions import Functions, FunctionForm, FunctionMeta
+        function_id = "masbro_tts"
+        existing = await Functions.get_function_by_id(function_id)
+        if not existing:
+            log.info(f"Seeding default TTS function '{function_id}'...")
+            
+            content = """import os
+import asyncio
+from typing import Dict, Any
+import edge_tts
+from rexpro_ai.models.users import Users
+from pydantic import BaseModel, Field
+
+
+class Pipe:
+    class Valves(BaseModel):
+        # Konfigurasi suara default di UI
+        INDONESIAN_VOICE: str = Field(
+            default="id-ID-ArdiNeural", description="Suara untuk Bahasa Indonesia"
+        )
+        ENGLISH_VOICE: str = Field(
+            default="en-US-BrianNeural", description="Suara untuk Bahasa Inggris"
+        )
+
+    def __init__(self):
+        self.valves = self.Valves()
+
+    def detect_english(self, text: str) -> bool:
+        \"\"\"Deteksi sederhana apakah teks dominan bahasa Inggris atau kode.\"\"\"
+        text_lower = text.lower()
+        # Keyword common di english response AI atau programming
+        eng_keywords = [
+            "the ",
+            "is ",
+            "you ",
+            "code ",
+            "function ",
+            "import ",
+            "const ",
+            "return ",
+        ]
+        return any(keyword in text_lower for keyword in eng_keywords)
+
+    async def pipe(
+        self, body: Dict[str, Any], __user__: Dict[str, Any] = None
+    ) -> Dict[str, Any]:
+        # Ambil teks terakhir dari chat response
+        messages = body.get("messages", [])
+        if not messages:
+            return body
+
+        last_message = messages[-1]
+        if last_message.get("role") != "assistant":
+            return body
+
+        text_to_speak = last_message.get("content", "")
+        if not text_to_speak:
+            return body
+
+        # 1. Routing Suara Berdasarkan Bahasa
+        is_eng = self.detect_english(text_to_speak)
+        chosen_voice = (
+            self.valves.ENGLISH_VOICE if is_eng else self.valves.INDONESIAN_VOICE
+        )
+
+        print(f"[Masbro TTS] Detected English: {is_eng} -> Using Voice: {chosen_voice}")
+
+        # 2. Proses enkapsulasi atau manipulasi metadata audio jika UI meminta stream
+        if "meta" not in last_message:
+            last_message["meta"] = {}
+
+        # Mengunci target voice id ke metadata agar dibaca oleh webui audio API
+        last_message["meta"]["tts_voice"] = chosen_voice
+
+        return body
+"""
+            form_data = FunctionForm(
+                id=function_id,
+                name="Masbro TTS Router",
+                content=content,
+                meta=FunctionMeta(
+                    description="Dynamic TTS voice routing for Indonesian and English",
+                    manifest={}
+                )
+            )
+            created = await Functions.insert_new_function(
+                user_id="system",
+                type="pipe",
+                form_data=form_data
+            )
+            if created:
+                await Functions.update_function_by_id(function_id, {
+                    "is_active": True,
+                    "is_global": True
+                })
+                log.info(f"Default TTS function '{function_id}' seeded and activated globally.")
+    except Exception as e:
+        log.warning(f"Failed to seed default TTS function: {e}")
+
     # Mark application as ready to accept traffic from a startup perspective.
     app.state.startup_complete = True
 
