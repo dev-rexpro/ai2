@@ -16,6 +16,12 @@ set -euo pipefail
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 cd "$SCRIPT_DIR" || exit 1
 
+if [[ -x "$SCRIPT_DIR/venv/bin/python" ]]; then
+  PYTHON_CMD="$SCRIPT_DIR/venv/bin/python"
+else
+  PYTHON_CMD=$(command -v python3 || command -v python)
+fi
+
 # ── Playwright browser installation (if configured) ──────────────────────────
 
 if [[ "${WEB_LOADER_ENGINE,,}" == "playwright" ]]; then
@@ -90,10 +96,8 @@ if [[ -n "${SPACE_ID:-}" ]]; then
 fi
 
 # ── Local Edge TTS Server ──────────────────────────────────────────────────
-
-PYTHON_CMD=$(command -v python3 || command -v python)
-echo "Starting local Edge TTS server..."
-"$PYTHON_CMD" edge_tts_server.py &
+# Temporarily disabled for local dev to avoid stray port conflicts.
+# "$PYTHON_CMD" edge_tts_server.py &
 
 # ── Launch uvicorn ───────────────────────────────────────────────────────────
 

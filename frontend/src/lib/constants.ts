@@ -4,7 +4,7 @@ export const APP_NAME = 'rexpro-ai';
 
 export const REXPRO_HOSTNAME = browser ? (dev ? `${location.hostname}:8080` : ``) : '';
 const PUBLIC_API_URL = (import.meta.env?.VITE_API_URL) || '';
-export const REXPRO_BASE_URL = PUBLIC_API_URL ? PUBLIC_API_URL : (browser ? (dev ? `http://${REXPRO_HOSTNAME}` : ``) : ``);
+export const REXPRO_BASE_URL = PUBLIC_API_URL ? PUBLIC_API_URL : (browser ? (dev ? `` : ``) : ``);
 export const REXPRO_API_BASE_URL = `${REXPRO_BASE_URL}/api/v1`;
 
 export const OLLAMA_API_BASE_URL = `${REXPRO_BASE_URL}/ollama`;

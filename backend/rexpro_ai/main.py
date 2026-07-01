@@ -1500,7 +1500,7 @@ app.add_middleware(AuthTokenMiddleware, fastapi_app=app)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=CORS_ALLOW_ORIGIN,
+    allow_origins=['*'],
     allow_credentials=True,
     allow_methods=['*'],
     allow_headers=['*'],
